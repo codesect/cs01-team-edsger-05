@@ -17,3 +17,5 @@
 ## Contributors
 
 > Add a list of contributors
+
+Akash edakkalathur [https://github.com/Akash-Edakkalathur]
