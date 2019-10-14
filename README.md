@@ -19,3 +19,4 @@
 > Add a list of contributors
 
 - [Muhammad Bilal](https://github.com/bilalbutt044)
+- [Akash edakkalathur](https://github.com/Akash-Edakkalathur)
