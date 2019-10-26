@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import NavbarTop from "./Navbar";
 
-import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
 class Signup extends Component {
   constructor(props) {
@@ -24,7 +23,7 @@ class Signup extends Component {
         >
           <h2>Signup</h2>
         </div>
-        <form>
+        <Form>
           <FormGroup>
             <Label for="username">User Name</Label>
             <Input
@@ -35,7 +34,7 @@ class Signup extends Component {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="username">Email Address</Label>
+            <Label for="email">Email Address</Label>
             <Input
               type="email"
               name="email"
@@ -44,7 +43,7 @@ class Signup extends Component {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="username">Contact Number</Label>
+            <Label for="contact">Contact Number</Label>
             <Input
               type="number"
               name="contact"
@@ -53,7 +52,7 @@ class Signup extends Component {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="username">Password</Label>
+            <Label for="password">Password</Label>
             <Input
               type="password"
               name="password"
@@ -62,7 +61,7 @@ class Signup extends Component {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="username">Confirm Password</Label>
+            <Label for="confirm-password">Confirm Password</Label>
             <Input
               type="password"
               name="confirm-password"
@@ -81,7 +80,7 @@ class Signup extends Component {
           >
             Reset all
           </Button>
-        </form>
+        </Form>
       </div>
     );
   }

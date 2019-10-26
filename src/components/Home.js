@@ -1,13 +1,11 @@
 import React, { Component } from "react";
-import NavbarTop from "./Navbar";
-import Signup from "./signup";
+import Signup from "./Signup";
 
 class Home extends Component {
   state = {};
   render() {
     return (
       <div className="container">
-        <NavbarTop />
         <Signup />
       </div>
     );
