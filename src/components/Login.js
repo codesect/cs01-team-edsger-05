@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
@@ -44,7 +45,7 @@ class Login extends Component {
             />
           </FormGroup>
           <Button color="success">Login</Button>{" "}
-          <span>Create an account? </span><a href="">SignUp</a>
+          <span>Create an account? </span><Link to="/signup"><span>SignUp</span></Link>
         </Form>
       </div>
     );
