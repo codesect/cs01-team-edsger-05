@@ -48,7 +48,12 @@ class SignupForm extends Component {
             />
           </FormGroup>
           {errors.username && touched.username && (
-            <div id="feedback">{errors.username}</div>
+            <div
+              id="feedback"
+              style={{ color: "red", marginTop: "-15px", marginBottom: "5px" }}
+            >
+              {errors.username}
+            </div>
           )}
           <FormGroup>
             <Label htmlFor="email">Email Address</Label>
@@ -63,7 +68,12 @@ class SignupForm extends Component {
             />
           </FormGroup>
           {errors.email && touched.email && (
-            <div id="feedback">{errors.email}</div>
+            <div
+              id="feedback"
+              style={{ color: "red", marginTop: "-15px", marginBottom: "5px" }}
+            >
+              {errors.email}
+            </div>
           )}
           <FormGroup>
             <Label htmlFor="contact">Contact Number</Label>
@@ -78,7 +88,12 @@ class SignupForm extends Component {
             />
           </FormGroup>
           {errors.contact && touched.contact && (
-            <div id="feedback">{errors.contact}</div>
+            <div
+              id="feedback"
+              style={{ color: "red", marginTop: "-15px", marginBottom: "5px" }}
+            >
+              {errors.contact}
+            </div>
           )}
           <FormGroup>
             <Label htmlFor="password">Password</Label>
@@ -93,7 +108,12 @@ class SignupForm extends Component {
             />
           </FormGroup>
           {errors.password && touched.password && (
-            <div id="feedback">{errors.password}</div>
+            <div
+              id="feedback"
+              style={{ color: "red", marginTop: "-15px", marginBottom: "5px" }}
+            >
+              {errors.password}
+            </div>
           )}
           <FormGroup>
             <Label htmlFor="confirmPassword">Confirm Password</Label>
@@ -108,7 +128,12 @@ class SignupForm extends Component {
             />
           </FormGroup>
           {errors.confirmPassword && touched.confirmPassword && (
-            <div id="feedback">{errors.confirmPassword}</div>
+            <div
+              id="feedback"
+              style={{ color: "red", marginTop: "-15px", marginBottom: "5px" }}
+            >
+              {errors.confirmPassword}
+            </div>
           )}
           <Button color="success" type="submit">
             Register
