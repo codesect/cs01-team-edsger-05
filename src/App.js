@@ -4,17 +4,21 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import NavbarTop from "./components/Navbar";
 import SignupForm from "./components/Signup";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
     <Router>
       <NavbarTop />
       <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/signup">
+        <Route exact path="/signup">
           <SignupForm />
+        </Route>
+        <Route exact path="/dashboard">
+          <Dashboard />
+        </Route>
+        <Route path="/">
+          <Home />
         </Route>
       </Switch>
     </Router>

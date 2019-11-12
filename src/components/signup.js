@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import { Button, FormGroup, Label } from "reactstrap";
+import { Redirect } from "react-router-dom";
 
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -31,7 +32,16 @@ const SignupSchema = Yup.object().shape({
 });
 
 class SignupForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoggedIn: false
+    };
+  }
   render() {
+    if (this.state.isLoggedIn) {
+      return <Redirect to="/dashboard" />;
+    }
     return (
       <div
         style={{
@@ -57,8 +67,16 @@ class SignupForm extends Component {
           }}
           validationSchema={SignupSchema}
           onSubmit={({ setSubmitting }) => {
-            alert("Form is validated! Submitting the form...");
-            setSubmitting(false);
+            // we will call API for login and on successfull login,
+            // we will update isLoggedIn state to true
+            // in below function we are updating state after 2 sec
+            // which means user successfully loggedin
+
+            setTimeout(() => {
+              // update state after 2 sec
+              this.setState({ isLoggedIn: !this.state.isLoggedIn });
+              console.log(this.state.isLoggedIn);
+            }, 2000);
           }}
         >
           {({
