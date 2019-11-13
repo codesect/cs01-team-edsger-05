@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { Button, Form, FormGroup, Label } from "reactstrap";
 
 import { Formik, Field, ErrorMessage } from "formik";
@@ -14,9 +14,14 @@ const LoginSchema = Yup.object().shape({
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      isLoggedIn: false
+    };
   }
   render() {
+    if (this.state.isLoggedIn) {
+      return <Redirect to="/dashboard" />;
+    }
     return (
       <div
         style={{
@@ -39,7 +44,16 @@ class Login extends Component {
           }}
           validationSchema={LoginSchema}
           onSubmit={({ setSubmitting }) => {
-            alert("Form is validated! Submitting the form...");
+            // we will call API for login and on successfull login,
+            // we will update isLoggedIn state to true
+            // in below function we are updating state after 2 sec
+            // which means user successfully loggedin
+
+            setTimeout(() => {
+              // update state after 2 sec
+              this.setState({ isLoggedIn: !this.state.isLoggedIn });
+              console.log(this.state.isLoggedIn);
+            }, 2000);
           }}
         >
           {({
@@ -91,7 +105,9 @@ class Login extends Component {
                   className="invalid-feedback"
                 />
               </FormGroup>
-              <Button color="success">Login</Button>{" "}
+              <Button color="success" type="submit">
+                Login
+              </Button>{" "}
               <span>Create an account? </span>
               <Link to="/signup">
                 <span>SignUp</span>
