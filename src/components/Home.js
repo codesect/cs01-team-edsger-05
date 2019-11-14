@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Login from "./Login"
+import Login from "./Login";
+import AddExpense from "./AddExpense";
 
 class Home extends Component {
   state = {};
@@ -7,6 +8,7 @@ class Home extends Component {
     return (
       <div className="container">
         <Login/>
+        <AddExpense/>
       </div>
     );
   }
