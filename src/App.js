@@ -1,24 +1,24 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./components/Home";
 import NavbarTop from "./components/Navbar";
 import SignupForm from "./components/Signup";
 import Dashboard from "./components/Dashboard";
+import Login from "./components/Login";
 
 function App() {
   return (
     <Router>
       <NavbarTop />
       <Switch>
-        <Route exact path="/signup">
+        <Route path="/signup">
           <SignupForm />
         </Route>
-        <Route exact path="/dashboard">
+        <Route path="/dashboard">
           <Dashboard />
         </Route>
-        <Route path="/">
-          <Home />
+        <Route exact path="/">
+          <Login />
         </Route>
       </Switch>
     </Router>

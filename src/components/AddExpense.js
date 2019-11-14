@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Label,  Input } from "reactstrap";
+import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
 import { Formik, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -83,7 +83,7 @@ class AddExpence extends Component {
                   }`}
                   placeholder="00.00"
                 />
-               
+
                 <ErrorMessage
                   component="div"
                   name="category"
@@ -91,32 +91,33 @@ class AddExpence extends Component {
                 />
               </FormGroup>
               <FormGroup>
-        <Label for="category">Category</Label>
-        <Input 
-        type="select" name="select" id="category"
-        onChange={handleChange}
-        onBlur={handleBlur}
-        className={`form-control ${
-            touched.category && errors.category ? "is-invalid" : ""
-          }`}
-        >
-        <option value="" label="Select a category" />
-        <option value="Food" label="Food" />
-        <option value="Cloths" label="Cloths" />
-        <option value="Medical" label="Medical" />
-        
-        </Input>
-        
-        <ErrorMessage
+                <Label for="category">Category</Label>
+                <Input
+                  type="select"
+                  name="select"
+                  id="category"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={`form-control ${
+                    touched.category && errors.category ? "is-invalid" : ""
+                  }`}
+                >
+                  <option value="" label="Select a category" />
+                  <option value="Food" label="Food" />
+                  <option value="Cloths" label="Cloths" />
+                  <option value="Medical" label="Medical" />
+                </Input>
+
+                <ErrorMessage
                   component="div"
                   name="amount"
                   className="invalid-feedback"
                 />
-      </FormGroup>
-      <FormGroup>
-        <Label for="notes">Notes if any</Label>
-        <Input type="textarea" name="text" id="notes" />
-      </FormGroup>
+              </FormGroup>
+              <FormGroup>
+                <Label for="notes">Notes if any</Label>
+                <Input type="textarea" name="text" id="notes" />
+              </FormGroup>
               <Button color="success">Add</Button>{" "}
               <Button
                 color="success"
