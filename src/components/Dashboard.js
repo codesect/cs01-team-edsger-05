@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import AddExpence from "./AddExpense";
+import Charts from "./Charts";
 
 class Dashboard extends Component {
   constructor(props) {
@@ -7,8 +9,10 @@ class Dashboard extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="container">
         <h3>Dashboard</h3>
+        <AddExpence />
+        <Charts />
       </div>
     );
   }
