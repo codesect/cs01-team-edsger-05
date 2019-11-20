@@ -7,7 +7,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer
+  ResponsiveContainer,
 } from "recharts";
 
 const data = [
@@ -16,22 +16,22 @@ const data = [
     food: 1050,
     cloth: 500,
     medical: 500,
-    amt: 2050
+    amt: 2050,
   },
   {
     date: "13/11/2019",
     food: 2000,
     cloth: 1000,
     medical: 100,
-    amt: 3100
+    amt: 3100,
   },
   {
     date: "11/11/2019",
     food: 1950,
     cloth: 500,
     medical: 1400,
-    amt: 3850
-  }
+    amt: 3850,
+  },
 ];
 
 export default function Barchart() {
@@ -43,7 +43,7 @@ export default function Barchart() {
           top: 20,
           right: 30,
           left: 20,
-          bottom: 5
+          bottom: 5,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />

@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Col } from "reactstrap";
+
 import Piechart from "./Piechart";
 import Barchart from "./Barchart";
 

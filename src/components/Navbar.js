@@ -6,19 +6,21 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink
+  NavLink,
 } from "reactstrap";
 import { Link } from "react-router-dom";
+
 class NavbarTop extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      isOpen: false
+      isOpen: false,
     };
   }
 
   toggle = () => this.setState({ isOpen: !this.state.isOpen });
+
   render() {
     return (
       <Navbar style={{ backgroundColor: "#03a679" }} light expand="md">
