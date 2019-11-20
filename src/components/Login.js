@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { Button, Form, FormGroup, Label } from "reactstrap";
-
 import { Formik, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
@@ -9,13 +8,14 @@ const LoginSchema = Yup.object().shape({
   username: Yup.string()
     .min(6, "Minimum 6 characters or less")
     .required("Required user name"),
-  password: Yup.string().required("Required password")
+  password: Yup.string().required("Required password"),
 });
+
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedIn: false
+      isLoggedIn: false,
     };
   }
   render() {
@@ -28,7 +28,7 @@ class Login extends Component {
           maxWidth: "350px",
           marginLeft: "auto",
           marginRight: "auto",
-          paddingTop: "60px"
+          paddingTop: "60px",
         }}
       >
         <div
@@ -40,7 +40,7 @@ class Login extends Component {
         <Formik
           initialValues={{
             username: "",
-            password: ""
+            password: "",
           }}
           validationSchema={LoginSchema}
           onSubmit={({ setSubmitting }) => {
@@ -62,7 +62,7 @@ class Login extends Component {
             handleSubmit,
             handleChange,
             handleBlur,
-            values
+            values,
           }) => (
             <Form onSubmit={handleSubmit}>
               <FormGroup>

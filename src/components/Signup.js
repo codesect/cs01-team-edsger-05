@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-
 import { Button, FormGroup, Label } from "reactstrap";
 import { Redirect } from "react-router-dom";
-
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
@@ -20,7 +18,7 @@ const SignupSchema = Yup.object().shape({
     .min(8, "Must be 8 characters or long")
     .matches(
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
-      "Pasword can only contain at least one uppercase letter, one lowercase letter and one number:"
+      "Pasword can only contain at least one uppercase letter, one lowercase letter and one number:",
     )
     .required("Required"),
   confirmPassword: Yup.string()
@@ -28,14 +26,14 @@ const SignupSchema = Yup.object().shape({
     .test("passwords-match", "Passwords must match", function(value) {
       return this.parent.password === value;
     })
-    .required("Required")
+    .required("Required"),
 });
 
 class SignupForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedIn: false
+      isLoggedIn: false,
     };
   }
   render() {
@@ -48,7 +46,7 @@ class SignupForm extends Component {
           maxWidth: "350px",
           marginLeft: "auto",
           marginRight: "auto",
-          paddingTop: "60px"
+          paddingTop: "60px",
         }}
       >
         <div
@@ -63,7 +61,7 @@ class SignupForm extends Component {
             contact: "",
             email: "",
             password: "",
-            confirmPassword: ""
+            confirmPassword: "",
           }}
           validationSchema={SignupSchema}
           onSubmit={({ setSubmitting }) => {
@@ -85,7 +83,7 @@ class SignupForm extends Component {
             isSubmitting,
             handleChange,
             handleBlur,
-            values
+            values,
           }) => (
             <Form>
               <div className="form-group">
@@ -195,7 +193,7 @@ class SignupForm extends Component {
                 style={{
                   backgroundColor: "white",
                   border: "2px solid #03a679",
-                  color: "#03a679"
+                  color: "#03a679",
                 }}
               >
                 Reset all

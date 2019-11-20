@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
-
 import { Formik, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
 const AddExpenseSchema = Yup.object().shape({
   title: Yup.string().required("Required title"),
   amount: Yup.string().required("Required Amount"),
-  category: Yup.string().required("Required category")
+  category: Yup.string().required("Required category"),
 });
+
 class AddExpence extends Component {
   constructor(props) {
     super(props);
@@ -21,7 +21,7 @@ class AddExpence extends Component {
           maxWidth: "350px",
           marginLeft: "auto",
           marginRight: "auto",
-          paddingTop: "60px"
+          paddingTop: "60px",
         }}
       >
         <div
@@ -33,7 +33,7 @@ class AddExpence extends Component {
         <Formik
           initialValues={{
             username: "",
-            password: ""
+            password: "",
           }}
           validationSchema={AddExpenseSchema}
           onSubmit={() => {
@@ -46,7 +46,7 @@ class AddExpence extends Component {
             handleSubmit,
             handleChange,
             handleBlur,
-            values
+            values,
           }) => (
             <Form onSubmit={handleSubmit}>
               <FormGroup>
@@ -124,7 +124,7 @@ class AddExpence extends Component {
                 style={{
                   backgroundColor: "white",
                   border: "2px solid #03a679",
-                  color: "#03a679"
+                  color: "#03a679",
                 }}
               >
                 Reset all

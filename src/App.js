@@ -1,6 +1,6 @@
 import React from "react";
-import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import NavbarTop from "./components/Navbar";
 import SignupForm from "./components/Signup";
 import Dashboard from "./components/Dashboard";

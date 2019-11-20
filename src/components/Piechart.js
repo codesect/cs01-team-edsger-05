@@ -4,19 +4,18 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 const data = [
   { name: "Food", value: 5000 },
   { name: "Cloth", value: 2000 },
-  { name: "Medical", value: 1050 }
+  { name: "Medical", value: 1050 },
 ];
-
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28"];
-
 const RADIAN = Math.PI / 180;
+
 const renderCustomizedLabel = ({
   cx,
   cy,
   midAngle,
   innerRadius,
   outerRadius,
-  percent
+  percent,
 }) => {
   const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
