@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import { Row, Col, Container } from "reactstrap";
+import { Row, Col } from "reactstrap";
 import Piechart from "./Piechart";
 import Barchart from "./Barchart";
 
 class Charts extends Component {
-  state = {};
   render() {
     return (
       <Row style={{ paddingTop: "100px" }}>

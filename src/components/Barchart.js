@@ -1,8 +1,7 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import {
   BarChart,
   Bar,
-  Cell,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -35,31 +34,27 @@ const data = [
   }
 ];
 
-export default class Example extends PureComponent {
-  static jsfiddleUrl = "https://jsfiddle.net/alidingling/90v76x08/";
-
-  render() {
-    return (
-      <ResponsiveContainer width="100%" height={400}>
-        <BarChart
-          data={data}
-          margin={{
-            top: 20,
-            right: 30,
-            left: 20,
-            bottom: 5
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="date" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="food" stackId="a" fill="#8884d8" />
-          <Bar dataKey="cloth" stackId="a" fill="#82ca9d" />
-          <Bar dataKey="medical" stackId="a" fill="#FFBB28" />
-        </BarChart>
-      </ResponsiveContainer>
-    );
-  }
+export default function Barchart() {
+  return (
+    <ResponsiveContainer width="100%" height={400}>
+      <BarChart
+        data={data}
+        margin={{
+          top: 20,
+          right: 30,
+          left: 20,
+          bottom: 5
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="date" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey="food" stackId="a" fill="#0088FE" />
+        <Bar dataKey="cloth" stackId="a" fill="#00C49F" />
+        <Bar dataKey="medical" stackId="a" fill="#FFBB28" />
+      </BarChart>
+    </ResponsiveContainer>
+  );
 }
