@@ -1,20 +1,26 @@
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Label,  Input } from "reactstrap";
+import { Link, Redirect } from "react-router-dom";
+import { Button, Form, FormGroup, Label ,Input} from "reactstrap";
 
 import { Formik, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
-const AddExpenseSchema = Yup.object().shape({
+const LoginSchema = Yup.object().shape({
   title: Yup.string().required("Required title"),
   amount: Yup.string().required("Required Amount"),
   category: Yup.string().required("Required category")
 });
-class AddExpence extends Component {
+class ExpenseForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      isLoggedIn: false
+    };
   }
   render() {
+    if (this.state.isLoggedIn) {
+      return <Redirect to="/dashboard" />;
+    }
     return (
       <div
         style={{
@@ -28,16 +34,17 @@ class AddExpence extends Component {
           className="heading"
           style={{ paddingBottom: "20px", color: "#03a679" }}
         >
-          <h2>Add Expense</h2>
+          <h2>{this.props.title}</h2>
         </div>
         <Formik
           initialValues={{
-            username: "",
-            password: ""
+            title: "",
+            amount: "",
+            category:""
           }}
-          validationSchema={AddExpenseSchema}
-          onSubmit={() => {
-            alert("Form is validated! Submitting the form...");
+          validationSchema={LoginSchema}
+          onSubmit={({ setSubmitting }) => {
+           
           }}
         >
           {({
@@ -61,7 +68,7 @@ class AddExpence extends Component {
                   className={`form-control ${
                     touched.title && errors.title ? "is-invalid" : ""
                   }`}
-                  placeholder="Enter Title"
+                  placeholder="Enter title"
                 />
                 <ErrorMessage
                   component="div"
@@ -69,7 +76,7 @@ class AddExpence extends Component {
                   className="invalid-feedback"
                 />
               </FormGroup>
-              <FormGroup>
+                   <FormGroup>
                 <Label for="amount">Amount</Label>
                 <Field
                   type="number"
@@ -86,10 +93,10 @@ class AddExpence extends Component {
                
                 <ErrorMessage
                   component="div"
-                  name="category"
+                  name="amount"
                   className="invalid-feedback"
                 />
-              </FormGroup>
+              </FormGroup> 
               <FormGroup>
         <Label for="category">Category</Label>
         <Input 
@@ -109,15 +116,17 @@ class AddExpence extends Component {
         
         <ErrorMessage
                   component="div"
-                  name="amount"
+                  name="category"
                   className="invalid-feedback"
                 />
       </FormGroup>
-      <FormGroup>
+       <FormGroup>
         <Label for="notes">Notes if any</Label>
         <Input type="textarea" name="text" id="notes" />
       </FormGroup>
-              <Button color="success">Add</Button>{" "}
+              <Button color="success" type="submit">
+                {this.props.buttonVal}
+              </Button>{" "}
               <Button
                 color="success"
                 style={{
@@ -136,4 +145,4 @@ class AddExpence extends Component {
   }
 }
 
-export default AddExpence;
+export default ExpenseForm;

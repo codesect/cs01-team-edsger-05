@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Login from "./Login";
-import AddExpense from "./AddExpense";
+import ExpenseForm from "./ExpenseForm";
 
 class Home extends Component {
   state = {};
@@ -8,7 +8,8 @@ class Home extends Component {
     return (
       <div className="container">
         <Login/>
-        <AddExpense/>
+        <ExpenseForm buttonVal="Add" title="Add expense"/>
+        <ExpenseForm buttonVal="Update" title="Update expense"/>
       </div>
     );
   }
